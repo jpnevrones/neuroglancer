@@ -197,6 +197,11 @@ export class Viewer extends RefCounted implements ViewerState {
           'row',
           [
             L.withFlex(1, element => new PositionStatusPanel(element, this)),
+            L.withFlex(1, element => {
+              let s = document.createElement('div');
+              s.innerHTML = '<strong><img src="https://files.slack.com/files-pri/T0PEXMJGZ-F51EH9X9T/hbp_logo_horiz_26px.png?pub_secret=5d8fb9792f"> atlas viewer <strong style="color: red">preliminary version</strong>';
+              element.appendChild(s);
+            }),
             element => {
               let button = document.createElement('button');
               button.className = 'help-button';
